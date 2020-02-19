@@ -1,0 +1,112 @@
+.header {
+  width: 100vw;
+  height: fit-content;
+  margin: 0;
+  z-index: 1;
+  position: fixed;
+  overflow: hidden;
+  font-size: 0.5vw;
+  vertical-align: middle;
+  top: 0;
+  left: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) and (min-width: 300px) {
+  .header__inner--top {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1366px) and (min-width: 767px) {
+  .header__inner--top h2 {
+    font-size: 50px !important;
+  }
+}
+
+.header__inner--top {
+  text-align: center;
+  background-image: url("../images/ilya-pavlov-OqtafYT5kTw-unsplash.jpg");
+  background-size: 100%;
+  box-sizing: border-box;
+  height: 10vw;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.header__logo--left {
+  max-width: 100%;
+  height: auto;
+  width: 8vw;
+  left: 100px;
+  padding-right: 50px;
+}
+
+.header__inner--top h2 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__title {
+  font-size: 5vw;
+  color: white;
+  text-shadow: 2px 2px #8f8f8f;
+}
+
+.header__title a {
+  margin-top: 50px;
+}
+
+.header__inner--bottom ul {
+  margin-top: 0;
+}
+
+.header__subtitles {
+  list-style-type: none;
+  height: 50px;
+  background-color: #f1f1f1;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  padding: inherit;
+}
+
+@media screen and (max-width: 768px) and (min-width: 300px) {
+  .header__subtitles {
+    height: 55px !important;
+    align-items: center;
+  }
+}
+
+.header__subtitles li {
+  margin-bottom: unset;
+}
+
+
+
+.sub__elem {
+  padding: 10px;
+  transition-duration: 0.6s;
+
+  justify-content: center;
+  display: flex;
+}
+
+.sub__elem a {
+  font-size: large;
+  text-decoration: none;
+  color: black;
+}
+
+.sub__elem:hover {
+  background-color: #c0c0c0;
+}
+
+@media screen and (max-width: 768px) and (min-width: 300px) {
+  .sub__elem a {
+    font-size: 10px;
+  }
+}

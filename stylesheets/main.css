@@ -1,0 +1,97 @@
+@import "./header.css";
+@import "./table.css";
+@import "./footer.css";
+
+body {
+  background-color: lightblue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100%;
+  margin: 0;
+}
+
+body section {
+  margin: auto;
+  max-width: 1290px;
+  padding: 30px;
+}
+
+body p, ul {
+  font-size: 2vh;
+}
+
+
+.content {
+  margin-top: 15vw;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) and (min-width: 300px) {
+  .content {
+    margin-top: 60px;
+  }
+}
+
+.content__para {
+  background-color: #f1f1f1;
+  margin-bottom: 2vw;
+  margin-top: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content__intro {
+  width: 95vw;
+  padding: 0px;
+}
+
+.content__para ul {
+  padding-inline-end: 40px;
+}
+
+.content__para p {
+  padding: 5px;
+}
+.anchor{
+  position:relative;
+}
+a.anchor {
+  z-index:0;
+  left: 0px;
+  top: -220px;
+}
+h1,
+h2 {
+  text-align: center;
+  background-size: 100%;
+  box-sizing: border-box;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+h3 {
+  margin: 0px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.title__h2 {
+  padding: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: lightcoral;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: justify;
+  width: 100%;
+  font-size: 16px;
+}

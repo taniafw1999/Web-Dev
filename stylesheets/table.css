@@ -1,0 +1,33 @@
+table {
+  margin: 40px 0px 20px;
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+td,
+th {
+  padding: 30px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) and (min-width: 300px) {
+  td,
+  th {
+    padding: 5px;
+  }
+}
+
+th {
+  font-size: larger;
+}
+
+@media screen and (max-width: 768px) and (min-width: 300px) {
+  tr {
+    font-size: 10px;
+  }
+}
