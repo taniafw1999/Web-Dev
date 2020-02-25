@@ -44,21 +44,165 @@
             <h2>Assignments & labs</h2>
         </div>
         <section class="content__para">
+            <h3>General instructions</h3>
+            <h4>Procedure</h4>
+            <ul>
+            <li>complete and submit your website in groups</li>
+            <li>a group must be registered with the TA beforehand</li>
+            <li>the website should be archived and submitted as a single zip through the BlackBoard system</li>
+            </ul>
+            <h4>Academic integrity</h4>
+            <p>
+            The work should be done by you and your peers only. You can rely on the support of teaching assistants and
+            student assistants during the practicum time, but you are not allowed to use the code of other groups. It is
+            also forbidden to use HTML generating services, programs and frameworks like Bootstrap. You are required to
+            manually create both the   HTML and the CSS code. You can use external sources for the content of your
+            website, however, you must   refer to them by linking and naming.</p>
+            
+        </section>
+
+        <section class="content__para">
             <h3>Assignment 1</h3>
-            <p>
+            <h4>Description</h4>
+            <p> 
+                Develop a static course website for an arbitrary university course.   Use the Web-representation technologies
+                and apply   standards and best practices discussed during the first   three lectures (HTML5, CSS3, accessibility,
+                responsive   design, SEO, good coding style, etc.). The visual   appeal of your design is highly welcomed, but no
+                strict   requirements are specified. Yet,   avoid deliberately repulsive color combinations. Your website   is
+                expected to   present meaningful information about the   course. The pages should be bigger than a paragraph,
+                but smaller   than, say, a book chapter.
+                
             </p>
+            <h4>Requirements</h4>
+            <p>Your website must:</p>
+            <img class="side" src="./images/crossPlatform.png" alt="HTML">
+            <ul>
+                    <li>have at least 5 pages with meaningful content</li>
+                    <li>use HTML5 semantic attributes for formatting (e.g. see here)</li>
+                    <li>use images</li>
+                    <li>have links between pages, within pages, and to external page(s)</li>
+                    <li>have at least one table</li>
+                    <li>be optimised for search engines</li>
+                    <li>use consistent layout and colour scheme</li>
+                    <li>use CSS for formatting, including at least:
+                        <ul>
+                            <li>several different styles for links</li>
+                            <li>several different styles for text</li>
+                            <li>styles for table elements</li>
+                            <li>cascading styles through selector specificity</li>
+                            <li>style inheritance</li>
+                        </ul>
+                    </li>
+                    <li>define all formatting styles in a separate CSS file</li>
+                    <li>be compliant with the HTML5 rules of W3C Markup Validation Service and the CSS3 rules of </li>
+                    <li>W3C CSS Validation Service</li>
+                    <li>to put it in other words: do not use any of the deprecated HTML elements or attributes </li>
+                    <li>(see for example here)</li>
+                    <li>render correctly in the current versions of Chrome and Firefox browsers</li>
+                    <li>Follow the Web accessibility standard
+                    <ul>
+                        <li>Keyboard compatibility</li>
+                        <li>Text to speech</li>
+                        <li>Clear layout and design</li>
+                        <li>Customizable text</li>
+                        <li>Understandable content</li>
+                    </ul>
+                </li>
+                    <li>Follow the Responsive Web guidelines</li>
+                    <ul>
+                        <li>Images</li>
+                        <li>Content positioning</li>
+                        <li>Units of measurement</li>
+                    </ul>
+                
+                <li>Maintain good coding style</li>
+                    <ul>
+                    <li>use indentation for nested HTML elements</li>
+                    <li>use lower case names for HTML elements and attributes</li>
+                    <li>use quotation marks for attribute values</li>
+                    <li>always use alt attribute with img elements</li>
+                    <li>use meaningful names for CSS classes</li>
+                    <li>follow the BEM naming convention for CSS classes</li>
+                    <li>short CSS rules can be written on one line, but long rules need to occupy multiple lines</li>
+                    <li>use lower case file names</li>
+                    </ul>
+                </ul> 
+                            
+        </section>
+        <section class="content__para">   
             <h3>Assignment 2</h3>
-            <p>
-            </p>
-            <h3>Assignment 3</h3>
-            <p>
-            </p>
+            
+            <h4>Description</h4>
+                
+                <p>Develop a dynamic version of the website created in Assignment 1 using JavaScript (if necessary, you can change/extend the main theme). 
+                    Use DOM methods, elements and events to interactively modify the content and appearance of your web-pages according to user actions. Use event listeners to process the events. Implement at least 1 case of event propagation (W3C model).
+                </p>
+
+                <p>
+                Create an info.html page whose main content is constructed purely through DOM manipulation (not document.write(), not .innerHTML). 
+                In other words, such elements as &lt;nav&gt;, &lt;header&gt;, &lt;footer&gt; and &lt;aside&gt; can still be a part of the file info.html, but all the actual content of the page has to be produced by JavaScript on the fly when the page is loaded. 
+                </p>
+
+                <p>
+                The content of this page should represent a structured description of your course (title, code, teacher, department, number of credits, 
+                academic period, etc.). 
+                Look at any course description at http://www.cs.uu.nl/education/ or any other course catalogue  for inspiration.
+                </p>
+                
+                <p>
+                Representation of this description in your JavaScript code should be an object of the class Course. 
+                Entries of this description should be the properties of the Course object (title, code, teacher,.. etc.). 
+                The overall class model you create should have at least 3 classes and at least 1 case of inheritance (can be more), 
+                meaning you need to define more than a Class Course, other entities should be defined as Classes as well. 
+                Links should be provided to browse from a particular property to a relevant webpage within your website or outside of it 
+                (for example, the name of the teacher in the description can be linked to a page presenting more information about the teacher). 
+                </p>
+
+                <p>
+                Use ES6 classes and ES6-style object construction.
+                </p>
+                
+                <p>
+                Implement two menus in your &lt;header&gt; or &lt;footer&gt; that allow the user to dynamically change the appearance  of elements on a page. 
+                One menu should be used to select an element, another to modify the selected element appearance. The options of the first menu should  
+                contain body, header, footer, aside, articles and sections (do not go deeper in the DOM hierarchy). 
+                They should be created on the fly by traversing the DOM of the page. In other words, a page can have more than one article and more
+                 than one section, and not necessarily have aside, but the menu should be able to read them correctly from the DOM of the page. 
+                 The option of the second menu should allow to change at least the font size and the color scheme of the element.
+                </p>
+                
+                <p>
+                To implement menus you can use the HTML Select element. These pages explain how you can create and manipulate the Select element and its 
+                properties:
+                </p>
+                <ul>
+                    <li><a href="https://www.w3schools.com/jsref/dom_obj_select.asp">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select</a></li>
+                    <li><a href="https://www.w3schools.com/jsref/dom_obj_select.asp">https://www.w3schools.com/jsref/dom_obj_select.asp</a></li> 
+                </ul>
+                <p>
+                The website should continue following the principles of responsive design and accessibility.
+                
+                Do not use external libraries and frameworks.
+                </p>
+                
+                <h4>Maintain good coding style</h4>
+                
+                <p>In addition to the good coding style rules specified in Assignment 1:</p>
+                    <ul>
+                    <li>separate scripting from the content</li>
+                    <li>use camelCase notation when naming your methods, variables and classes</li>
+                    <li>use indentation when writing your JavaScript code</li>
+                    <li>use meaningful comments</li>
+                    <li>terminate JavaScript statements with a ";"</li>
+                    </ul>
         </section>
     </article>
 
     <footer class="footer">
         <div class="footer__inner">
-            http://www.cs.uu.nl/education/vak/INFOB2WT | Utrecht University 2020
+            Disclaimer: All page content is referenced from the course syllabus of Webtechnology (<a
+                href="http://www.cs.uu.nl/education/vak/INFOB2WT">INFOB2WT</a>)
+            | Utrecht University 2020
         </div>
     </footer>
 

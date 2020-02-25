@@ -1,20 +1,19 @@
 .footer {
-    width: 100%;
-    margin: 0;
-  }
-  
-  .footer__inner {
-    text-align: center;
-    background-size: 100%;
-    background-color: azure;
-    opacity: 0.5;
-    box-sizing: border-box;
-    height: 50px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .footer__inner:hover {
-    opacity: 0.8;
-  }
+  width: 100%;
+  margin: 0;
+}
+
+.footer__inner {
+  font-size: 2vh;
+  text-align: center;
+  background-size: 100%;
+  background-color: azure;
+  opacity: 0.5;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.footer__inner:hover {
+  opacity: 0.8;
+  transition-duration: 0.2s;
+}
