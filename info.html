@@ -40,12 +40,24 @@
   
       <article class="content">
           <div class="title__h2">
-              <h2 id="course__name">Welcome to Webtechnology</h2>
-              <h3>Course given by <div id="teacher__name">foo bar</div></h3>
+              <h2>Course overview</h2>
           </div>
+        </h2>
   
           <section class="content__para">
-              <p id="test">test failure</p>
+            
+            <h3>
+                <span id="course__name"></span>
+                | Department of&nbsp;<span id="course__department"></span>
+            </h3>
+            <ul>
+                <li>Teacher: <span id="teacher__name"></span></li>
+                <li>Course code: <span id="course__code"></span></li>
+                <li>Points: <span id="course__points"></span></li>
+                <li>Period: <span id="course__period"></span></li>
+                <li>Timeslot: <span id="course__slot"></span></li>
+                <li>Schedule: <span id="course__schedule"></span></li>
+            </ul>
             </section>
   
       <footer class="footer">
@@ -56,9 +68,6 @@
           </div>
       </footer>
       
-  <script>
-    document.getElementById("test").style.color = "blue";
-    </script>    
   <script src="scripts/info.js"></script>
   </body>
   </html>
