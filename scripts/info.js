@@ -1,4 +1,4 @@
-
+import "./main.js"
 class Named {
     constructor(name) {
         this.name = name;
