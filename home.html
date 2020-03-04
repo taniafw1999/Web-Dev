@@ -33,16 +33,42 @@
                     <li class="sub__elem">
                         <a href="grading.html">Grading & grades</a>
                     </li>
+                  <!--  <li class="dropDown">
+
+                  </li>-->
                 </ul>
             </nav>
-        </div>
+
+
+            <button class="options" onclick="dropContent()">Options</button>
+              <div class="dropDown_content" id="myDropDown">
+                <select id="page-elem">
+                  <option value="">--Select page element to change--</option>
+                  <option value="header">Header</option>
+                  <option value="body">Body</option>
+                  <option value="footer">Footer</option>
+                  <option value="aside">Aside</option>
+                  <option value="article">Articles</option>
+                  <option value="section">Sections</option>
+                </select>
+
+                <select id="toggle-option">
+                  <option value="">--Select action--</option>
+                  <option value="bigFont">Increase font size</option>
+                    <option value="smallFont">Decrease font size</option>
+                    <option value="theme">Toggle theme</option>
+                    <option value="default"> Default settings</option>
+                </select>
+
+                <button id ="change">change</button>
+              </div>
     </header>
+
 
     <article class="content">
         <div class="title__h2">
             <h2>Welcome to Webtechnology</h2>
         </div>
-
         <section class="content__para">
             <p>
                 Internet is the most relevant information technology of our age. World
@@ -65,7 +91,7 @@
         </section>
 
         <section class="content__para">
-            <h3>Course prerequisites</h3>
+          <h3>Course prerequisites</h3>
             <p>
                 The course has no formal prerequisites. However,
                 basic knowledge of programming are expected. Although this is an introductory
@@ -77,7 +103,7 @@
         </section>
 
         <section class="content__para">
-            <h3>Working methods</h3>
+          <h3>Working methods</h3>
             <ul>
                 <li>
                     <em>Lectures.</em> Most of the course material is delivered through standard
@@ -126,7 +152,7 @@
         </section>
 
         <section class="content__para">
-            <h3>Course Outcomes</h3>
+        <h3>Course Outcomes</h3>
             <p>
                 This course is designed to help you understand how Web applications operate
                 and learn how to build them yourself.
@@ -258,6 +284,9 @@
             | Utrecht University 2020
         </div>
     </footer>
+<script src="javascript\options.js"></script>
+
+
 </body>
 
 </html>
