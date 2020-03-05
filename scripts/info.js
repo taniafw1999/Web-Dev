@@ -15,8 +15,9 @@ const teacher = new Teacher(
 )
 
 class Course extends Named {
-    constructor(name, department, code, points, period, slot, teacher) {
+    constructor(name, university, department, code, points, period, slot, teacher) {
         super(name);
+        this.school = university;
         this.department = department;
         this.code = code;
         this.points = points;
@@ -28,6 +29,7 @@ class Course extends Named {
 
 const course = new Course(
       "Webtechnology"
+    , "Utrecht University"
     , "Information and Computing Sciences"
     , "INFOB2WT"
     , 7.5
@@ -49,7 +51,7 @@ const div_inner     = document.createElement('div');
 const div_inner_top = document.createElement('div');
 const img_logo      = document.createElement("img");
 const h2_title      = document.createElement("h2");
-const h2_title_text = document.createTextNode("Webtechnology");
+const h2_title_text = document.createTextNode(course.name);
 
 // set attributes 
 setAttributes(img_logo,
@@ -127,7 +129,7 @@ const footer     = document.getElementsByTagName('footer')[0];
 const footer_div = document.createElement('div');
 
 footer_div.setAttribute('class', 'footer__inner');
-footer_div.appendChild(document.createTextNode("Disclaimer: All page content is referenced from the course syllabus of Webtechnology (INFOB2WT) | Utrecht University 2020"));
+footer_div.appendChild(document.createTextNode("Disclaimer: All page content is referenced from the course syllabus of " + course.name + " (" + course.code + ") " + " | " + course.school + " 2020"));
 footer.appendChild(footer_div);
 
 // render in DOM tree
