@@ -1,4 +1,18 @@
-document.getElementById("vision_switch").innerHTML = "Switch theme"
+const button = document.createElement('button');
+
+const button_text = document.createTextNode("Switch theme");
+
+const article = document.createElement('article');
+
+article.setAttribute('class', 'content');
+
+button.addEventListener('click', switchTheme);
+button.appendChild(button_text);
+
+const header1 = document.getElementsByTagName('header')[0];
+const body = document.getElementsByTagName('body')[0];
+
+body.appendChild(article).appendChild(button);
 
 function switchTheme() {
 
