@@ -15,8 +15,9 @@ const teacher = new Teacher(
 )
 
 class Course extends Named {
-    constructor(name, department, code, points, period, slot, teacher) {
+    constructor(name, university, department, code, points, period, slot, teacher) {
         super(name);
+        this.school = university;
         this.department = department;
         this.code = code;
         this.points = points;
@@ -28,6 +29,7 @@ class Course extends Named {
 
 const course = new Course(
       "Webtechnology"
+    , "Utrecht University"
     , "Information and Computing Sciences"
     , "INFOB2WT"
     , 7.5
@@ -49,7 +51,7 @@ const div_inner     = document.createElement('div');
 const div_inner_top = document.createElement('div');
 const img_logo      = document.createElement("img");
 const h2_title      = document.createElement("h2");
-const h2_title_text = document.createTextNode("Webtechnology");
+const h2_title_text = document.createTextNode(course.name);
 
 // set attributes 
 setAttributes(img_logo,
@@ -127,7 +129,7 @@ const footer     = document.getElementsByTagName('footer')[0];
 const footer_div = document.createElement('div');
 
 footer_div.setAttribute('class', 'footer__inner');
-footer_div.appendChild(document.createTextNode("Disclaimer: All page content is referenced from the course syllabus of Webtechnology (INFOB2WT) | Utrecht University 2020"));
+footer_div.appendChild(document.createTextNode("Disclaimer: All page content is referenced from the course syllabus of " + course.name + " (" + course.code + ") " + " | " + course.school + " 2020"));
 footer.appendChild(footer_div);
 
 // render in DOM tree
@@ -143,15 +145,43 @@ div_inner.appendChild(nav).appendChild(ul_menu).appendChild(sub_elem3).appendChi
 div_inner.appendChild(nav).appendChild(ul_menu).appendChild(sub_elem4).appendChild(menu_assignments)
 div_inner.appendChild(nav).appendChild(ul_menu).appendChild(sub_elem5).appendChild(menu_grading)
 
-// document.getElementById("course__department").innerHTML = course.department;
-// document.getElementById("teacher__name").innerHTML = course.teacher.name;
-// document.getElementById("course__name").innerHTML = course.name;
-// document.getElementById("course__code").innerHTML = course.code;
-// document.getElementById("course__points").innerHTML = course.points.toString();
-// document.getElementById("course__period").innerHTML = course.period.toString();
-// document.getElementById("course__slot").innerHTML = course.slot;
-// document.getElementById("course__schedule").innerHTML = "<a href=\"schedule.html\">Schedule</a>";
-// document.getElementById("test").innerHTML = "test succeeded";
+// fill page
+
+// title
+const article_div = document.createElement('div');
+article_div.setAttribute('class','title__h2');
+article.appendChild(article_div);
+
+const h2 = document.createElement('h2');
+article_div.appendChild(h2);
+h2.appendChild(document.createTextNode(course.name))
+
+// section
+const section = document.createElement('section');
+section.setAttribute('class', 'content__para');
+article.appendChild(section);
+var ul = document.createElement('ul')
+section.appendChild(ul);
+var courseData = [course.department,course.code,teacher.name,course.points,course.period,course.slot];
+
+for (var index in courseData) {
+    newListElem(document.createTextNode(courseData[index].toString()), ul);
+}
+
+//section.appendChild(document.createTextNode(course.department));
+//section.appendChild(document.createTextNode(teacher.name));
+//section.appendChild(document.createTextNode(course.name));
+//section.appendChild(document.createTextNode(course.code));
+//section.appendChild(document.createTextNode(course.points.toString())); 
+//section.appendChild(document.createTextNode(course.period.toString()));
+//section.appendChild(document.createTextNode(course.slot));
+
+// schedule link
+var scheduleLink = document.createElement('a');
+scheduleLink.setAttribute('href', 'schedule.html');
+scheduleLink.appendChild(document.createTextNode("Schedule"));
+newListElem(scheduleLink, ul);
+
 
 body.appendChild(article).appendChild(button).appendChild(button_text);
 
@@ -161,6 +191,12 @@ body.insertBefore(header, article);
 body.appendChild(footer);
 
 // functions
+
+function newListElem(el, ul) {
+    var li = document.createElement('li');
+    ul.appendChild(li);
+    li.appendChild(el);
+}
 
 // set multiple attributes
 function setAttributes(el, attrs) {
@@ -202,5 +238,3 @@ function switchTheme() {
         location.reload()
     }
 }
-
-
