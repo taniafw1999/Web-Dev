@@ -15,8 +15,9 @@ const teacher = new Teacher(
 )
 
 class Course extends Named {
-    constructor(name, code, points, period, slot, teacher) {
+    constructor(name, department, code, points, period, slot, teacher) {
         super(name);
+        this.department = department;
         this.code = code;
         this.points = points;
         this.period = period;
@@ -26,21 +27,21 @@ class Course extends Named {
 }
 
 const course = new Course(
-    "INFOB2WT"
+      "Webtechnology"
+    , "Information and Computing Sciences"
+    , "INFOB2WT"
     , 7.5
     , 3
     , "D"
     , teacher
 )
 
+
+// Body
+const body = document.getElementsByTagName('body')[0];
+
 // Header
 
-// function to set multiple attributes
-function setAttributes(el, attrs) {
-    for (var key in attrs) {
-        el.setAttribute(key, attrs[key]);
-    }
-}
 // find header element
 const header        = document.getElementsByTagName("header")[0];
 
@@ -112,6 +113,23 @@ menu_assignments.appendChild(menu_assignments_text);
 menu_grading.setAttribute('href', "grading.html");
 menu_grading.appendChild(menu_grading_text);
 
+// content (articles and sections)
+
+const article = document.createElement('article');
+const button = document.createElement('button');
+const button_text = document.createTextNode("Switch theme");
+
+article.setAttribute('class', 'content');
+button.addEventListener('click', switchTheme); 
+
+// footer
+const footer     = document.getElementsByTagName('footer')[0];
+const footer_div = document.createElement('div');
+
+footer_div.setAttribute('class', 'footer__inner');
+footer_div.appendChild(document.createTextNode("Disclaimer: All page content is referenced from the course syllabus of Webtechnology (INFOB2WT) | Utrecht University 2020"));
+footer.appendChild(footer_div);
+
 // render in DOM tree
 header
     .appendChild(div_inner)
@@ -125,4 +143,64 @@ div_inner.appendChild(nav).appendChild(ul_menu).appendChild(sub_elem3).appendChi
 div_inner.appendChild(nav).appendChild(ul_menu).appendChild(sub_elem4).appendChild(menu_assignments)
 div_inner.appendChild(nav).appendChild(ul_menu).appendChild(sub_elem5).appendChild(menu_grading)
 
+// document.getElementById("course__department").innerHTML = course.department;
+// document.getElementById("teacher__name").innerHTML = course.teacher.name;
+// document.getElementById("course__name").innerHTML = course.name;
+// document.getElementById("course__code").innerHTML = course.code;
+// document.getElementById("course__points").innerHTML = course.points.toString();
+// document.getElementById("course__period").innerHTML = course.period.toString();
+// document.getElementById("course__slot").innerHTML = course.slot;
+// document.getElementById("course__schedule").innerHTML = "<a href=\"schedule.html\">Schedule</a>";
+// document.getElementById("test").innerHTML = "test succeeded";
+
+body.appendChild(article).appendChild(button).appendChild(button_text);
+
 div_inner.insertBefore(div_inner_top, nav)
+body.insertBefore(header, article);
+
+body.appendChild(footer);
+
+// functions
+
+// set multiple attributes
+function setAttributes(el, attrs) {
+    for (var key in attrs) {
+        el.setAttribute(key, attrs[key]);
+    }
+}
+
+// switch themes (dark & light)
+function switchTheme() {
+
+    const body              = document.getElementsByTagName("body");
+    const article           = document.getElementsByTagName("article");
+    const content__para     = document.getElementsByClassName("content__para");
+    const header__subtitles = document.getElementsByClassName("header__subtitles");
+    const anchors           = document.getElementsByTagName("a");
+    const anchor__menu      = document.getElementsByClassName("menu");
+
+    if (body[0].style.cssText === "") {
+        Array.from(body)
+            .map(body => body.style.backgroundColor = "#2c2a38");
+
+        Array.from(article)
+            .map(article => article.style.color = "#d7d5e0");
+
+        Array.from(content__para)
+            .map(content__para => content__para.style.backgroundColor = "#767294");
+
+        Array.from(header__subtitles)
+            .map(header__subtitle => header__subtitle.style.backgroundColor = "#767294");
+
+        Array.from(anchors)
+            .map(a => a.style.color = "#8c98ed");
+
+        Array.from(anchor__menu)
+            .map(m => m.style.color = "black") 
+    }
+    else {
+        location.reload()
+    }
+}
+
+
