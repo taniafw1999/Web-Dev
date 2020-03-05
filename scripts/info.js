@@ -40,12 +40,16 @@ const course = new Course(
 
 
 // fill page
-document.getElementById("course__department").innerHTML = course.department;
-document.getElementById("teacher__name").innerHTML = course.teacher.name;
-document.getElementById("course__name").innerHTML = course.name;
-document.getElementById("course__code").innerHTML = course.code;
-document.getElementById("course__points").innerHTML = course.points.toString();
-document.getElementById("course__period").innerHTML = course.period.toString();
-document.getElementById("course__slot").innerHTML = course.slot;
-document.getElementById("course__schedule").innerHTML = "<a href=\"schedule.html\">Schedule</a>";
-document.getElementById("test").innerHTML = "test succeeded";
+document.getElementById("course__department").appendChild(document.createTextNode(course.department));
+document.getElementById("teacher__name").appendChild(document.createTextNode(teacher.name));
+document.getElementById("course__name").appendChild(document.createTextNode(course.name));
+document.getElementById("course__code").appendChild(document.createTextNode(course.code));
+document.getElementById("course__points").appendChild(document.createTextNode(course.points.toString())); 
+document.getElementById("course__period").appendChild(document.createTextNode(course.period.toString()));
+document.getElementById("course__slot").appendChild(document.createTextNode(course.slot));
+
+// schedule link
+var scheduleLink = document.createElement('a');
+scheduleLink.setAttribute('href', 'schedule.html');
+scheduleLink.appendChild(document.createTextNode("Schedule"));
+document.getElementById("course__schedule").appendChild(scheduleLink);
