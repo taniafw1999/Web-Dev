@@ -4,7 +4,6 @@
   margin: 0;
   z-index: 1;
   position: fixed;
-  overflow: hidden;
   font-size: 0.5vw;
   vertical-align: middle;
   top: 0;
@@ -68,7 +67,6 @@
   list-style-type: none;
   height: 50px;
   background-color: #f1f1f1;
-  overflow: hidden;
   display: flex;
   justify-content: space-around;
   padding: inherit;
@@ -85,16 +83,17 @@
   margin-bottom: unset;
 }
 
-
-
-.sub__elem {
-  padding: 10px;
+.sub__elem, .options {
+  padding: 8px;
   transition-duration: 0.6s;
-
   justify-content: center;
   display: flex;
 }
-
+.options{
+  margin-left: 20px;
+  margin-top: 0;
+  display: inline;
+}
 .sub__elem a {
   font-size: large;
   text-decoration: none;
@@ -105,6 +104,11 @@
   background-color: #c0c0c0;
 }
 
+.dropDown_content{
+  position: relative;
+  display: none;
+  margin-left: 20px;
+}
 @media screen and (max-width: 768px) and (min-width: 300px) {
   .sub__elem a {
     font-size: 10px;
